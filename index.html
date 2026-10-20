@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<title>8 Ball Pool — Human vs Computer</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- START LOBBY -->
+<div id="startScreen">
+  <div class="startCard">
+    <div class="gameLogo">🎱</div>
+    <h1>8 BALL POOL</h1>
+    <div class="tagline">HUMAN VS COMPUTER • PREMIUM MATCH</div>
+
+    <div class="startPlayers">
+      <div class="playerCard">
+        <div class="playerAvatar">😎</div>
+        <b>YOU</b>
+        <span>PLAYER 1</span>
+      </div>
+      <div class="vs">VS</div>
+      <div class="playerCard">
+        <div class="playerAvatar">🤖</div>
+        <b>COMPUTER</b>
+        <span>AI OPPONENT</span>
+      </div>
+    </div>
+
+    <div class="startControls">
+      <label for="startDifficulty">AI DIFFICULTY</label>
+      <select id="startDifficulty">
+        <option value="easy">Easy • Relaxed</option>
+        <option value="medium" selected>Medium • Competitive</option>
+        <option value="hard">Hard • Expert</option>
+      </select>
+      <button id="startBtn">▶ START GAME</button>
+    </div>
+    <div class="startHint">Aim by moving on the table • Drag the power lever to shoot • Tap the cue-ball spin pad</div>
+  </div>
+</div>
+
+<div id="app">
+
+  <!-- TOP -->
+  <div id="topbar">
+
+    <button class="tbtn" id="backBtn">
+      <svg width="26" height="26"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="#fff"
+           stroke-width="2.4"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M15 5l-7 7 7 7"/>
+      </svg>
+    </button>
+
+    <button class="tbtn" id="fsBtn">
+      <svg width="24" height="24"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="#fff"
+           stroke-width="2"
+           stroke-linecap="round">
+        <path d="M4 9V4h5"/>
+        <path d="M20 9V4h-5"/>
+        <path d="M4 15v5h5"/>
+        <path d="M20 15v5h-5"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- TURN -->
+  <div id="turnbar">
+
+    <div id="turnIcon">
+      <i></i>
+      <i class="s"></i>
+      <b id="turnBadge">7</b>
+    </div>
+
+    <div id="turnText">
+      Your turn
+    </div>
+
+    <button id="closeBtn">✕</button>
+
+  </div>
+
+  <!-- GAME -->
+  <div id="stage">
+
+    <div id="three-wrap"></div>
+
+    <div id="modePanel">
+      <div id="modeTitle">GAME MODE</div>
+      <div id="modeValue">HUMAN VS COMPUTER</div>
+    </div>
+
+    <select id="difficulty">
+      <option value="easy">AI • Easy</option>
+      <option value="medium" selected>AI • Medium</option>
+      <option value="hard">AI • Hard</option>
+    </select>
+
+    <div id="aiThinking">
+      <span class="aiDot"></span>
+      Computer is thinking...
+    </div>
+
+    <div id="power">
+      <div id="pFill"></div>
+      <div id="pKnob"></div>
+    </div>
+
+    <div id="toast"></div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div id="bottombar">
+
+    <div id="panel">
+
+      <div class="prow active" id="row1">
+        <div class="avatar a1">😎</div>
+        <div class="chips" id="chips1"></div>
+      </div>
+
+      <div class="eightrow">
+        <span id="chip8">8</span>
+      </div>
+
+      <div class="prow" id="row2">
+        <div class="avatar a2 aiAvatar">🤖</div>
+        <div class="chips" id="chips2"></div>
+      </div>
+
+    </div>
+
+    <div id="spinpad">
+      <span id="spinDot"></span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- WIN -->
+<div id="overlay">
+
+  <div id="ocard">
+
+    <h2 id="otitle"></h2>
+
+    <p id="osub"></p>
+
+    <button id="obtn">
+      Play Again
+    </button>
+
+  </div>
+
+</div>
+
+<!-- THREE.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
